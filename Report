@@ -1,0 +1,225 @@
+
+Table of Contents
+Table of Contents	3
+1.	Introduction	4
+Project Aim	4
+Project Plan	4
+2.	Data preparation quality issues and remedies	5
+General Data Issues	5
+Data Quality Problems In The COTS Dataset	6
+3.	Data analysis and commentary	8
+Business Question #1:	8
+Business Question #2:	10
+Business Question #3:	12
+4.	Data visualization and commentary	13
+Trends In Sales Values Across Coffee Shops Throughout Time.	13
+Comparative Analysis Of Three-Year Cumulative Sales Value Across Products.	14
+Impact Of Delivery Service Introduction On Sales Performance	15
+5.	Conclusion	17
+6.	References:	19
+
+
+
+
+
+
+
+
+
+
+1.	Introduction
+
+Project Aim
+
+The Corporate Strategy Manager of Café on The Sea has commissioned this report to decide if the current business model provides expansion and growth opportunities that align with top management expectations. 
+Data will be gathered from the three shops with top performance: Blackpool, Portsmouth, and Southampton. Focus will be given to the following core business questions:
+1.	Which shop would return the greatest profits from an inversion on expanding its floor area?
+2.	Which products are having the worst performance and should be eliminated from the menu?
+3.	Did the home delivery service offered in Blackpool have a positive impact on the sales performance of the shop?
+This report will aim to answer these questions by first cleaning the dataset with the shop’s key information to get it ready for analysis. Data visualisation can be used to simplify context data, identify trends and patterns, monitor performance and decide on resource allocation (Bobylev, 2023). This will be done with the aim of deciding on the company’s strategic direction.
+
+Project Plan
+
+The PPDAC framework is used to address these questions in an organized and logical way using systematic problem definition, project planning, data analysis and interpreting the data to identify the next steps (Spiegelhalter, 2019). A methodical approach to data collection and analysis is crucial, involving gathering data from diverse sources, analysing it using proper protocols, simplifying the findings, and sharing them with stakeholders to inform decision-making (Koeberg, 2022).
+The company’s success can be measured by analyzing the key performance insights. These are:
+-	Sales growth rate. 
+-	Profit margins and sales performance for each product.
+-	Foot traffic in coffee shops.
+-	Customer satisfaction.
+-	Impact of home delivery service on sales.
+-	Consumer retention rate.
+-	Average transaction value.
+-	Gross margin.
+By offering insights into sales patterns, customer preferences, and operational efficiency, enhanced analytics can elevate these key performance indicators (Schrage, Muttreja, & Kwan, 2022). For instance, it can direct the subsequent actions in refining the home delivery service, customizing marketing strategies, and optimizing product offerings.
+
+
+
+2.	Data preparation quality issues and remedies
+
+General Data Issues
+
+There are many different types of data collection and data quality issues. Due to the scope of this report, a few common ones will be mentioned. Firstly, collecting data is expensive in both time and cost for companies ( Bounie, Dubus and Waelbroeck, 2023). Its collection, its storage and its governance need to follow law regulations such as the GDPR principles (Rhahla, Allegue and Abdellatif, 2021). Ensuring this is done effectively and lawfully requires a substantial investment from the company and in some cases a team of people that are solely focused on data (Gal and Aviv, 2020). A possible solution for this is to hire people with experience, so that money does not need to be invested in training, or outsourcing data tasks to well-known companies that can be trusted Hamilton & Sodeman, 2020).
+
+Another common data issue is data collection bias. Sampling methods, flawed survey design or researcher influence can lead to a distorted representation of the population which can compromise the validity and reliability of the analysis and conclusions from the gathered data (Moore et al., 2021). This issue can be prevented by using random or stratified sampling, recognizing, and correcting bias, increasing sample size and using automated and unbiased data collection technologies and methods (Raghavan et al., 2020).
+
+Moreover, given that duplicate data can skew analysis, inflate metrics, and produce false results, it is a common problem in data preparation and quality (Nicklin and Plonsky, 2020). Multiple data entry points, system integrations, or human error can result in duplicates, requiring for thorough cleaning procedurs to guarantee data accuracy and dependability for well-informed decision-making (Whyte, 2021).
+
+Duplicates, missing values, inconsistencies, and errors are among the common problems with data preparation and quality that can be resolved through the refinement and cleaning of data to guarantee correctness, consistency, and dependability (Watkins, 2024). This is referred to as database cleansing. 
+
+Additionally, database interpolation is a method that uses current values to estimate and fill in missing data points in a dataset (Lichti, 2024). It ensures a more accurate and full dataset by assisting with the resolution of frequent problems with data preparation and quality, such as missing values, gaps in time series, and incomplete data (Saeipourdizaj, Sarbakhsh, and Gholampour, 2021).
+
+Data Quality Problems In The COTS Dataset 
+
+In the Café on The Sea dataset, the below errors were found and corrected before analysis was done using the data.
+
+ 
+Figure 1. Data issues identified and solutions provided.
+
+For qualitative data, the countif function was used. For the cities, the following formula was applied to each city:[ =COUNTIF(A:A, "City")], and the three answers were added. The result was 637 meaning that 11 entries don’t match the correct format. These were identified and contained a spelling mistake, the cities were written as “Southam” instead of “Southampton”, this issue was solved by ensuring that the city Southampton was written exactly the same in the appropriate rows. The same approach was used to identify misspellings in the products column and clean the data. This column was cleaned by ensuring that the products were written exactly equally in all respecting cells. Changes were made to the following values: Colddrinks, kakes, pazztry and sandwich. 
+
+The sales volume data was shown as “-“ rather than 0 when no product was sold. The negative values were found with the “find all” function of Excel and these rows where standardized to make all the cells have a numerical value. Standardization ensures that the dataset contains data that can be compared, is uniform and provides precision in the dataset (Bastarache et al., 2022). 
+
+ Moreover, a pivot table reflected that there were six instances where 2022 was written as 2032, these values were corrected. 
+
+Additionally, some cells in the sales value column showed incorrect data. This was present in two different ways. The first case is that the volume and value cells had a logical relation, but the value was in negative rather than positive, in these cases, the negative sign was deleted. There were other instances where the relation between volume and value was not logical, as for example row 457 where the volume was -1 and the value was - £344, in these cases the volume was changed to its positive value (1, in this case) and the value of the sales was calculated for the product. 
+
+3.	Data analysis and commentary
+
+Business Question #1:
+
+1.	Which shop would return the greatest profits from an inversion on expanding its floor area?
+To answer this question, the below table was created. It shows a benchmark comparison of sales volume and value between the three coffee shops by quarter, by year and across the 3 year.
+ 
+Figure 2. Volume and value of sales by quarters and year.
+
+The following conclusions were made from the data above:
+-	The Blackpool’s shop is currently returning the greatest profit and shows the most noticeable increase in sales value from early 2022 onwards. Making it the best candidate for the inversion as it has greater potential to return greater profits. The data indicates that Blackpool’s shop has a stronger market position, which could signify that the market share and the brand recognition and loyalty in this shop is higher than in the other locations, as such, the store has a higher possibility of leveraging their position for the maximum return from an investment (Muriuki, 2023).
+-	The shop with the current lower profit is Southampton. 
+-	The worse quarter for the three shops was the first one. This might be explained by the following reasons:
+1.	Following the holiday season, economic activity goes down as customers reduce their non-essential spending such as caffeine and premade food to make up for the money spent during December (Gao et al., 2022). 
+2.	In England, the first quarter is the coldest of the year, this reduces foot traffic and decreases tourism, further reducing the number of possible customers. 
+
+Business Question #2:
+
+2.	Which products are having the worst performance and should be eliminated from the menu?
+A benchmark comparison of the products by quarter, year and three-year period shows the performance and identifies which products are the top and bottom performing products. 
+ 
+Figure 3. Volume and value sales of products per shop per quarter and year.
+-	Although the bottom performing product in terms of volume is the sandwiches, the hot drinks have returned less profit than the sandwiches. 
+-	The best-performing product in both volume and value is coffee. 
+-	If one product is to be removed it should be the hot drinks, however, it is recommended to keep track and compare the future sandwiches and pastries sales data before deciding what additional product to remove. 
+Business Question #3:
+
+3.	Did the home delivery service offered in Blackpool have a positive impact on the sales performance of the shop?
+To be able to answer this question, a table was created where a closer look is taken across the volume and value sales of Blackpool store, dividing it in 12 total quarters across the 3 years. 
+
+ 
+Figure 4. Blackpool's sales value and volume per quarter.
+-	The delivery service started in April of 2022. From the quarter before it started to the next quarter there was a rise in profit of £1,722. 
+-	2022 was the year with the greatest improvement in profit (£2,925.63), comparing the first quarter of each year with its corresponding last profit. 
+-	The above implies that the delivery service had a positive effect on the volume and value sales of the Blackpool shop. 
+
+4.	Data visualization and commentary
+Trends In Sales Values Across Coffee Shops Throughout Time.
+
+The chart below shows the trends in sales values over the three years for the stores in Blackpool, Portsmouth and Southampton. Line graphs facilitate making well-informed decisions as they allow for the comparison of various data series, they highlight data changed, and expose cyclical behaviours (Thakur, 2024).
+
+
+ 
+Figure 5. Sales value over time.
+
+-	Based on a thorough analysis of the data from the line graph visualization, it can be argued that Southampton represents the most reliable investment option due to its relatively stable sales figures, which exhibit less significant fluctuations compared to the other locations. 
+
+-	Blackpool presents a higher potential for substantial profit from future investments, as its sales values have consistently been higher since 2020. This potential is further enhanced by the recent fluctuation observed in 2022, which coincided with the shop's partnership with Deliveroo, leading to a notable increase in sales. 
+
+
+Considering the arguments presented, it is recommended to prioritize the investment in expanding the floor area of the Blackpool shop. The Corporate Strategy Manager of Café on The Sea explicitly stated that the investment should be directed towards the shop that will "return the greatest profits. 
+
+
+Comparative Analysis Of Three-Year Cumulative Sales Value Across Products.
+
+The visualization below illustrates the performance across various product categories for the stores in Blackpool, Portsmouth, and Southampton. Bar charts are invaluable for comparing categorical data, as they clearly depict trends, patterns, and outliers, making them highly effective for communicating complex data insights to diverse audiences in an accessible manner (Kharakhash, 2023).
+
+ 
+Figure 6. Product Category Performance
+-	It is recommended that hot drinks be removed from the menu. Eliminating products with lower consumer demand allows for a greater focus on high-performing items, such as coffee. This strategy can enhance the efficacy and efficiency of store operations by eliminating unnecessary steps, minimizing waste, and optimizing workflows (Golrizgashti, Zhu and Sarkis, 2022). 
+-	As expected, the data shows that all products were sold the most in Blackpool, which reinforces the potential of Blackpool as the store to be invested on for the expansion of the floor area.
+
+Impact Of Delivery Service Introduction On Sales Performance 
+ 
+The sales figures in Blackpool, Portsmouth, and Southampton are compared in the bar graph below before and after a delivery service was implemented. It's crucial to remember that Deliveroo—the delivery service—was only introduced in Blackpool. To give a fair comparison of the effect on sales before and after the delivery service was started in Blackpool, the sales values for Portsmouth and Southampton represent the post-delivery era for Blackpool. By utilising Portsmouth and Southampton as control variables, this approach makes sure that the analysis appropriately represents the variations in sales performance owing to the delivery service in Blackpool.
+     
+Figure 7. Sales comparison for all cities.
+-	The data indicates that, in contrast to the pre-delivery period, Blackpool saw a discernible increase in sales following the establishment of the delivery service, while sales in Portsmouth and Southampton remained comparatively flat. This implies that the improved sales performance in Blackpool was largely attributable to the delivery service. It has been demonstrated that the advent of delivery services like Deliveroo increases coffee shop sales by broadening their customer base and increasing the accessibility of their goods (Smith, 2023). Enhanced revenue streams and larger sales volumes are frequently the results of this greater accessibility.
+
+-	Blackpool's sales value grew significantly after delivery, according to specific comparisons from the data, demonstrating the efficiency of the delivery service. Blackpool's sales performance was positively impacted by delivery possibilities, however Portsmouth and Southampton, who did not have a delivery service, did not show similar growth. 
+
+5.	Conclusion
+The comprehensive analysis presented in this report provides clear guidance on the strategic decisions necessary for optimizing the operations and profitability of Café on The Sea.
+1.	Greatest Profits from Expanding Floor Area: The Blackpool shop stands out as the most promising candidate for an investment in expanding its floor area. This conclusion is based on Blackpool’s consistently high sales figures across nearly all product categories, which indicate a strong market presence and a loyal consumer base. The data shows that Blackpool has significantly higher sales values compared to Portsmouth and Southampton, suggesting a higher potential for substantial returns on investment. Furthermore, the recent introduction of a delivery service in Blackpool has further boosted sales, reinforcing the shop's capacity to leverage additional space effectively for increased profitability.
+
+2.	Products to Eliminate from the Menu: According to the data, the product category with the lowest performance across all three locations is hot drinks. Hot drinks have yielded lower profits than other categories like pastries and sandwiches, even with their moderate sales. Coffee shops can reduce waste, streamline operations, and concentrate more on high-performing items like sandwiches and coffee by doing away with or downplaying hot drinks. This strategic change can increase profitability and operational efficiency by focusing resources on items that have stronger financial returns and increased consumer demand.
+
+3.	Impact of Home Delivery Service in Blackpool: The Blackpool shop's sales performance has improved since the home delivery service was implemented. The data indicates a noteworthy surge in sales value subsequent to the execution of the delivery service in April 2022. This increasing pattern suggests that the delivery option has been successful in drawing in more clients and increasing sales. The delivery service confirmed the efficacy of this method in improving Blackpool's financial performance by broadening the shop's market reach and boosting overall sales.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.	References:
+
+Bastarache, L., Brown, J.S., Cimino, J.J., Dorr, D.A., Embi, P.J., Payne, P.R., Wilcox, A.B. and Weiner, M.G., 2022. Developing real‐world evidence from real‐world data: Transforming raw data into analytical datasets. Learning Health Systems, 6(1). 
+
+Bobylev, T., 2023. Dashboard for data-driven decision support in small and medium enterprises: a web-based approach.
+
+Bounie, D., Dubus, A. and Waelbroeck, P., 2023. Competition between strategic data intermediaries with implications for merger policy.
+
+Gal, M.S. and Aviv, O., 2020. The competitive effects of the GDPR. Journal of Competition Law & Economics, 16(3), pp.349-391.
+
+Gao, J., Li, X., Wang, Z. and Zhang, H., 2022. The Financial Statement Analysis of Starbucks.
+
+Golrizgashti, S., Zhu, Q. and Sarkis, J., 2022. Formalizing the strategic product deletion decision: incorporating multiple stakeholder views. Industrial Management & Data Systems, 122(4).
+
+Hamilton, R.H. and Sodeman, W.A., 2020. The questions we ask: Opportunities and challenges for using big data analytics to strategically manage human capital resources. Business Horizons, 63(1).
+
+Moore, Z., Harrison, D.E. and Hair, J., 2021. Data quality assurance begins before data collection and never ends: What Marketing researchers absolutely need to remember. International Journal of Market Research, 63(6), pp.693-714.
+
+Muriuki, N.M., 2023. Influence of Marketing Strategies and Stakeholder’s Engagement on Sales Growth of Coffee Export in Kenya (Doctoral dissertation, KeMU).
+
+Nicklin, C. and Plonsky, L., 2020. Outliers in L2 research in applied linguistics: A synthesis and data re-analysis. Annual Review of Applied Linguistics, 40, pp.26-55.
+
+Kharakhash, О., 2023. Data visualization: transforming complex data into actionable insights. Automation of technological and business processes, 15(2).
+
+Koeberg, C., 2022. Factors of a successful information system value chain in the public sector (Doctoral dissertation, University of Johannesburg)
+
+Lichti, T., 2024. Development of Methods and Tools for the Design of Programmable Materials. Fraunhofer Verlag.
+
+Raghavan, M., Barocas, S., Kleinberg, J. and Levy, K., 2020, January. Mitigating bias in algorithmic hiring: Evaluating claims and practices. In Proceedings of the 2020 conference on fairness, accountability, and transparency (pp. 469-481).
+
+Rhahla, M., Allegue, S. and Abdellatif, T., 2021. Guidelines for GDPR compliance in Big Data systems. Journal of Information Security and Applications, 61.
+
+Saeipourdizaj, P., Sarbakhsh, P. and Gholampour, A., 2021. Application of imputation methods for missing values of PM10 and O3 data: Interpolation, moving average and K-nearest neighbor methods. Environmental Health Engineering and Management Journal, 8(3).
+
+Schrage, M., Muttreja, V. and Kwan, A., 2022. How the wrong KPIs doom digital transformation. MIT Sloan Management Review.
+
+Spiegelhalter, D., 2019. The art of statistics: Learning from data. Penguin UK.
+
+
+Thakur, V., 2024. Practical Applications of Business Statistics: Techniques and Insights. Dr Vishal Thakur.Watkins, T., 2024. Enhancing Efficiency in IT and Web Operations: A Work Diary Analysis at BDI.
+
+Whyte, S.T., 2021. Reliable data collection: A tool for data integrity in Nigeria (Doctoral dissertation, Walden University).
